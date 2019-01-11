@@ -48,7 +48,7 @@ Subsequent response definitions will show teh expected value of the 'data field'
 
 If a meetup alreaady exists, the existing one will be overwritten
 
-***Response***
+***Responses***
 
 '201 created' on success
 
