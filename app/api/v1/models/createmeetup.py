@@ -13,7 +13,6 @@ class CreateMeetups:
             'meetupdate': meetup_date,
             'meetuptime': meetup_time,
             'meetupvenue': meetup_venue,
-            
     }
 
         self.meetups.append(newMeetup)
