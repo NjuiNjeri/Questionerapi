@@ -1,5 +1,6 @@
-from flask import jsonify
+from flask import jsonify, abort
 from datetime import datetime
+
 
 
 
@@ -20,3 +21,12 @@ class Meetup_records:
     }
 
         self.meetuprecords.append(newMeetup)
+
+        def get_specific_meetup(self, meetupid):
+            ''' will refer to the meetupidentifier to fetch it for the user'''
+            for meetup in self.meetuprecords:
+                if id== int(meetupid):
+                    return meetup
+                    '''if it does not exist'''
+                    return (404, "Error: meetup {} does not exist")
+                    
