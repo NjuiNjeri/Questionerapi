@@ -1,5 +1,6 @@
 from flask import Flask, Blueprint, jsonify
 from app.api.v1.models.createmeetup import CreateMeetups
+import datetime
 
 from ..models.createmeetup import CreateMeetups
 
@@ -11,5 +12,5 @@ meetup = CreateMeetups()
 @v1_meetups.route('/meetups', methods=['GET'])
 def allMeetups():
     
-    return jsonify({"meetups": meetup.meetups})
+    return jsonify({"meetups": meetup.meetups}), 201
 
