@@ -6,13 +6,14 @@ class CreateMeetups:
     def __init__(self):
         self.meetups = []
 
-    def createMeetup(self, meetupId="", meetupimg="", location="", date="", time=""):
+    def createMeetup(self, meetupid="", meetup_date="", meetup_time= "", meetup_venue=""):
+        '''creates new meetup'''
         newMeetup ={
-            ''' creates a meetup'''
-            'self.meetupid': meetupId
+            'meetupid': meetupid,
+            'meetupdate': meetup_date,
+            'meetuptime': meetup_time,
+            'meetupvenue': meetup_venue,
             
-
-
     }
 
         self.meetups.append(newMeetup)
