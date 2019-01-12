@@ -9,4 +9,4 @@ meetup = Meetup_records()
 
 @v1_meetup_blueprint.route('api/v1/meetups', methods=['GET'])
 def post_question():
-    return jsonify({"meetups": meetup.meetuprecords})
+    return jsonify({"meetups": meetup.meetuprecords}) 
