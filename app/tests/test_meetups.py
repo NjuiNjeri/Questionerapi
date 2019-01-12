@@ -9,16 +9,16 @@ from app.api.v1.models.createmeetup import CreateMeetups
 app = create_app()
 
 class TestMeetups(unittest.TestCase):
-    """ Creates tests for meetup endpoints """
+    """ tests admin creates meetup """
     
     def setUp(self):
         self.app = create_app()
         self.client = self.app.test_client()
 
         # payload = {
-        #     'username': username,
-        #     'email': email,
-        #     'password':password
+        #     'username': username
+        #     'email': email
+        #     'password': password
         # }
 
 
@@ -26,9 +26,9 @@ class TestMeetups(unittest.TestCase):
         result = self.client.get('/api/v1/meetups', content_type='application/json')
         self.assertEqual(result.status_code, 200)
 
-    # def test_create_endpoint(self):
-    #     result = self.client.get('/api/v1/meetups', content_type='application/json')
-    #     self.assertEqual(result.status_code, 201)
+    def test_create_endpoint(self):
+        result = self.client.get('/api/v1/meetups', content_type='application/json')
+        self.assertEqual(result.status_code, 201)
 
 if __name__ == '__main__':
     unittest.main()
