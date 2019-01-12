@@ -1,3 +1,4 @@
+from datetime import datetime
 
 
 
@@ -10,9 +11,9 @@ class CreateMeetups:
         '''creates new meetup'''
         newMeetup ={
             'meetupid': meetupid,
-            'meetupdate': meetup_date,
+            'meetupdate': datetime,
             'meetuptime': meetup_time,
             'meetupvenue': meetup_venue,
-    }
+         }
 
         self.meetups.append(newMeetup)

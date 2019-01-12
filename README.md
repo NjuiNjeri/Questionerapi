@@ -11,7 +11,7 @@ all responses will have the form
 }
 '''
 
-Subsequent response definitions will show teh expected value of the 'data field'
+Subsequent response definitions will show the expected value of the 'data field'
 
 ### list of all meetups
 
