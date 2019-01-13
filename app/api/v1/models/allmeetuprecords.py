@@ -22,4 +22,3 @@ class Meetup_records:
         self.meetuprecords.append(newMeetup)
 
         return Meetup_records
-        
