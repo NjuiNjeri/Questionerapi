@@ -1,6 +1,4 @@
 from flask import Flask, make_response, url_for, redirect, render_template
-from pymongo import MongoClient
-from bson.objectid import ObjectId
 import os
 import json
 
@@ -27,3 +25,5 @@ class RSVP(object):
                 "self": "{}api/rsvps/{}".format('request.url_root, _id')
             }
         }
+
+    
