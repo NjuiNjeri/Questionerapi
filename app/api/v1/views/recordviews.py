@@ -5,7 +5,7 @@ from uuid import uuid4
 
 v1_meetup_blueprint = Blueprint('meetups', __name__, url_prefix='/api/v1')
 
-meetup = Meetup_records()
+meetup =Meetup_records()
 
 @v1_meetup_blueprint.route('api/v1/meetups', methods=['GET'])
 def post_question():
