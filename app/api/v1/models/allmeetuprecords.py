@@ -1,6 +1,5 @@
-from flask import jsonify, abort
+from flask import jsonify
 from datetime import datetime
-
 
 
 
@@ -13,7 +12,7 @@ class Meetup_records:
     def createMeetup(self, meetupid="", meetup_date="", meetup_time= "", meetup_venue=""):
         '''creates new meetup'''
         newMeetup   ={
-            'meetupid': meetup,
+            'meetupid': meetupid,
             'meetupdate': datetime,
             'meetuptime': meetup_time,
             'meetupvenue': meetup_venue,
@@ -22,11 +21,4 @@ class Meetup_records:
 
         self.meetuprecords.append(newMeetup)
 
-        def meetup(self, meetupid):
-            ''' will refer to the meetupidentifier to fetch it for the user'''
-            for meetup in self.meetuprecords:
-                if id== int(meetupid):
-                    return meetup
-                else:
-                    return abort (404)                   
-                    
+        return Meetup_records
