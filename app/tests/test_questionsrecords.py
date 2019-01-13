@@ -5,7 +5,7 @@ import unittest
 import json
 # from app import create_app
 
-from app.api.v1.models.createmeetup import CreateMeetups
+from app.api.v1.models.createmeetup import createmeetup
 
 
 '''test question endpoints'''
