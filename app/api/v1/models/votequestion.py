@@ -22,4 +22,6 @@ class Vote_Question(self.):
          else:
             return httpresponse('error-unknown vote type')
 
-    
+        {
+            "vote": userUpVotes
+        }
