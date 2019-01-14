@@ -7,10 +7,10 @@ from datetime import datetime
 
 class Meetup_records:
     '''creates the meet up record'''
-    def __init__(self, *args,):
+    def __init__(self,):
         self.meetuprecords= []
 
-    def createMeetup(self, meetupid="", meetup_date="", meetup_time= "", meetup_venue=""):
+    def createMeetup(self, meetupid, meetup_date, meetup_time, meetup_venue):
         '''creates new meetup'''
         newMeetup   ={
             'meetupid': meetup,
