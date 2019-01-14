@@ -9,16 +9,16 @@ class Meetup_records:
     def __init__(self, *args,):
         self.meetuprecords= []
 
-    def createMeetup(self, meetupid="", meetup_date="", meetup_time= "", meetup_venue=""):
+    def createMeetup(self, meetupid, date, time, venue):
         '''creates new meetup'''
         newMeetup   ={
             'meetupid': meetupid,
             'meetupdate': datetime,
-            'meetuptime': meetup_time,
-            'meetupvenue': meetup_venue,
+            'meetuptime': time,
+            'meetupvenue': venue,
         
     }
 
         self.meetuprecords.append(newMeetup)
 
-        return Meetup_records
+        return self.meetuprecords
