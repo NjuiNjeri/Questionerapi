@@ -4,7 +4,7 @@ from datetime import datetime
 from uuid import uuid4
 from django.http import HttpResponse, HttpResponseNotFound
 
-v1_all_questions_blueprint= Blueprint('questions', __name__, url_prefix='api/v1')
+v1_all_questions_blueprint= Blueprint('questions', __name__, url_prefix='/api/v1')
 
 
 @v1_all_questions_blueprint.route('/questions', methods=['POST'])
