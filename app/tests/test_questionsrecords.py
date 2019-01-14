@@ -5,14 +5,14 @@ import unittest
 import json
 # from app import create_app
 
-from app.api.v1.models.createmeetup import createmeetup
+from app import create_app
 
 
 '''test question endpoints'''
-class Test_Questions(unittest.TestCase):
+class TestQuestions(unittest.TestCase):
     def setUp(self):
         
-        # self.app = create_app()
+        self.app = create_app()
         self.client = self.app.test_client()
         self.post_question = {
             "question": "question",
@@ -21,8 +21,8 @@ class Test_Questions(unittest.TestCase):
             "user_id": "user_id"
         }
 
-        def test_get_all_meetups(self):
-            result = self.client.get('/api/v1/questions', content_type='application/json')
+    def test_get_all_meetups(self):
+        result = self.client.get('/api/v1/questions', content_type='application/json')
         self.assertEqual(result.status_code, 200)
 
     def test_create_endpoint(self):
