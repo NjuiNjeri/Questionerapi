@@ -4,11 +4,14 @@ from datetime import datetime
 from uuid import uuid4
 
 v1_all_questions_blueprint= Blueprint('questions', __name__, url_prefix='api/v1')
-newquestion=All_Questions()
+
 
 @v1_all_questions_blueprint.route('/questions', methods=['POST'])
-def post_question():
+def post_question(id):
     data= request.get_json()
+    title = data['title']
+    question=data['question']
+    
 
     return post_question.all_questions
 

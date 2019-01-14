@@ -22,7 +22,7 @@ class TestQuestions(unittest.TestCase):
         }
 
     def test_get_all_meetups(self):
-        result = self.client.get('/api/v1/questions', content_type='application/json')
+        result = self.client.post('/api/v1/questions', content_type='application/json' data=json.dumps (self.post_question))
         self.assertEqual(result.status_code, 200)
 
     def test_create_endpoint(self):

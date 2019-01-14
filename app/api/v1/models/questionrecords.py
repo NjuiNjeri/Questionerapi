@@ -6,10 +6,9 @@ class All_Questions():
     def __init__(self, *args,):
         self.all_questions:[]
 
-        def post_question(self, questionid="", date="", user="", meetupid="", title="", body="", votes=int):
+        def post_question(self, questionid, user, meetupid, title, body, votes):
             ''' will add a new question to the self.all_questions list'''
-            self.questionid= questionid
-            self.date= date
+
             self.user= user
             self.meetupid= meetupid
             self.title= title
@@ -17,8 +16,8 @@ class All_Questions():
             self.votes= []
 
             new_question= {
-                "questionid": questionid,
-                "date": date,
+                "questionid": len(self.all_questions)+1,
+                "date": datetime.now(),
                 "user": user,
                 "meetupid": meetupid,
                 "title": title,
