@@ -18,18 +18,19 @@ class TestQuestions(unittest.TestCase):
             "question": "question",
             "title": "title",
             "meetup_id": "meetup_id",
-            "user_id": "user_id"
         }
 
     def test_get_all_meetups(self):
         '''tests all questions sent to meetups'''
         result = self.client().post('/api/v1/questions', content_type='application/json', data=json.dumps (self.post_question))
+        print(result)
         self.assertEqual(result.status_code, 200)
+        
 
     def test_create_endpoint(self):
-        '''tests that the questions are actually seen at the endpoint '''
+        '''tests that the questions are actually seen at the endpoint'''
         result = self.client().get('/api/v1/questions', content_type='application/json')
-        self.assertEqual(result.status_code, 201)
+        self.assertEqual(result.status_code, 200)
 
 if __name__ == '__main__':
     unittest.main()
