@@ -16,7 +16,7 @@ class TestRSVP(unittest.TestCase):
             }
 
     def test_new(self):
-        RSVP = rsvp.RSVP
+        self.rsvp = RSVP
         doc = RSVP.new("test name", "test@example.com")
         assert doc.name == "test name"
         assert doc.email == "test@example.com"
