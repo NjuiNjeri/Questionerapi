@@ -13,7 +13,7 @@ class TestQuestions(unittest.TestCase):
     def setUp(self):
         
         self.app = create_app()
-        self.client = self.app.test_client()
+        self.client = self.app.test_client
         self.post_question = {
             "question": "question",
             "title": "title",
@@ -22,11 +22,13 @@ class TestQuestions(unittest.TestCase):
         }
 
     def test_get_all_meetups(self):
-        result = self.client.post('/api/v1/questions', content_type='application/json' data=json.dumps (self.post_question))
+        '''tests all questions sent to meetups'''
+        result = self.client().post('/api/v1/questions', content_type='application/json', data=json.dumps (self.post_question))
         self.assertEqual(result.status_code, 200)
 
     def test_create_endpoint(self):
-        result = self.client.get('/api/v1/questions', content_type='application/json')
+        '''tests that the questions are actually seen at the endpoint '''
+        result = self.client().get('/api/v1/questions', content_type='application/json')
         self.assertEqual(result.status_code, 201)
 
 if __name__ == '__main__':
