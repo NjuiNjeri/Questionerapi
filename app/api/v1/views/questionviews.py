@@ -5,10 +5,10 @@ from uuid import uuid4
 from json import make_response, jsonify
 from ..models.questionrecords import All_Questions
 
-v1_all_questions_blueprint= Blueprint('questions', __name__, url_prefix='/api/v1')
+v1_all_questions_blueprint= Blueprint('/questions', __name__, url_prefix='/api/v1')
 
 
-@v1_all_questions_blueprint.route('meetup/<int>:id/questions', methods=['POST'])
+@v1_all_questions_blueprint.route('/questions', methods=['POST'])
 def post_question(id):
     data= request.get_json()
     title = data['title']

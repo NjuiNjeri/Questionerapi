@@ -18,7 +18,6 @@ class TestQuestions(unittest.TestCase):
             "question": "question",
             "title": "title",
             "meetup_id": "meetup_id",
-            "user_id": "user_id"
         }
 
     def test_get_all_meetups(self):
@@ -29,7 +28,7 @@ class TestQuestions(unittest.TestCase):
         
 
     def test_create_endpoint(self):
-        '''tests that the questions are actually seen at the endpoint '''
+        '''tests that the questions are actually seen at the endpoint'''
         result = self.client().get('/api/v1/questions', content_type='application/json')
         self.assertEqual(result.status_code, 200)
 
