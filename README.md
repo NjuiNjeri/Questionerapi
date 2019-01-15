@@ -93,3 +93,7 @@ If a meetup alreaady exists, the existing one will be overwritten
 
 '404 not found' if the meetup does not exist
 '204 no content'succesful action, but no data to be returned
+
+The Available endpoints include
+
+Api/v1/questions
