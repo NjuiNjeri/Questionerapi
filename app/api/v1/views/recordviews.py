@@ -13,13 +13,13 @@ def createmeetup():
     data= request.get_json()
 
     id = len(meetup.meetuprecords)+1
-    date=datetime.now()
-    venue= data['venue']
-    title= data['title']
+    'date' ='datetime.now'()
+    "venue" 'venue'
+    "title"'title'
 
-    return make_response(jsonify({"All Meetups Here" : response})), 201
+    return make_response(jsonify({"Status", 201, "All Meetups Here"})), 201
 
     @v1_meetup_blueprint.route('/allmeetups', methods=['GET'])
     def get_all():
-        meets= Meetup_records.createMeetup()
-        return jsonify(meets), 201
+        meetup= Meetup_records.createMeetup()
+        return jsonify(meetup), 200

@@ -10,6 +10,9 @@ all responses will have the form
     "message": "Description of what happened"
 }
 '''
+Endpoints Include:
+GET\api/v1/questions  (The all question records)
+POST\api/v1/questions (post questions endpoint)
 
 Subsequent response definitions will show the expected value of the 'data field'
 
