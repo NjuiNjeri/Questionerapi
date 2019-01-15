@@ -79,7 +79,7 @@ If a meetup alreaady exists, the existing one will be overwritten
 ]
 '''
 
-## Delete a device
+## Delete a meetup
 
 'DELETE/meetup/[identifier]
 
