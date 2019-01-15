@@ -1,4 +1,4 @@
-from flask import jsonify, Blueprint, request, json, Response
+from flask import jsonify, Blueprint, request, json, Response, make_response
 from ..models.allmeetuprecords import Meetup_records
 from datetime import datetime
 from uuid import uuid4
@@ -17,15 +17,9 @@ def createmeetup():
     venue= data['venue']
     title= data['title']
 
-    meetup.createMeetup(id, title, date, venue)
-    return jsonify({
-        "status": 201, "data":[
-            { "meetupid":"meetupid",  "title": "title", "venue":"venue", "date":"date"}]}), 201
+    return make_response(jsonify({"All Meetups Here" : response})), 201
 
-
-
-@v1_meetup_blueprint.route('/allmeetups', methods=['GET'])
-def get_allmeetups():
-    meetups= meetup.get_meetups()
-
-    return jsonify(meetups), 200
+    @v1_meetup_blueprint.route('/allmeetups', methods=['GET'])
+    def get_all():
+        meets= Meetup_records.createMeetup()
+        return jsonify(meets), 201
