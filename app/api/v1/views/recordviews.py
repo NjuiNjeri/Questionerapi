@@ -1,23 +1,31 @@
-from flask import jsonify, Blueprint, request, json, make_response
+from flask import jsonify, Blueprint, request, json, Response
 from ..models.allmeetuprecords import Meetup_records
 from datetime import datetime
 from uuid import uuid4
-from app.api.v1.models.allmeetuprecords import Meetup_records
 
-v1_meetup_blueprint = Blueprint('/meetups', __name__, url_prefix='/api/v1')
 
-meetup =Meetup_records()
+v1_meetup_blueprint = Blueprint('allmeetups', __name__, url_prefix='/api/v1')
 
-@v1_meetup_blueprint.route('/meetups', methods=['POST'])
-def post_meetup():
+meetup = Meetup_records()
+
+@v1_meetup_blueprint.route('/allmeetups', methods=['POST'])
+def post_question():
     data= request.get_json()
-    meetupid = data['meetupid']
+
+    meetupid = len(meetup.meetuprecords)+1
+    date=datetime.now()
+    venue= data['venue']
     title= data['title']
-    response = meetup.post_meetup(meetupid, title)
 
-    return make_response(jsonify({"Meetups updated" : response})), 201
+    meetup.createMeetup(meetupid, title, date, venue)
+    return jsonify({
+        "status": 201, "data":[
+            {"title": "title", "venue":"venue", "date":"date", "tags": ["tag1", "tag2", "tag3"] }]}), 201
 
-@v1_meetup_blueprint.route('/meetups', methods=['GET'])
+
+
+@v1_meetup_blueprint.route('/allmeetups', methods=['GET'])
 def get_allmeetups():
-    meets= meetup.get_meetup()
-    return jsonify(meets)
+    meetups= meetup.get_meetups()
+
+    return jsonify(meetups), 200
