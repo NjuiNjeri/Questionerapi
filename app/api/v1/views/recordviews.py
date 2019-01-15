@@ -9,15 +9,15 @@ v1_meetup_blueprint = Blueprint('allmeetups', __name__, url_prefix='/api/v1')
 meetup = Meetup_records()
 
 @v1_meetup_blueprint.route('/allmeetups', methods=['POST'])
-def post_question():
+def createmeetup():
     data= request.get_json()
 
-    meetupid = len(meetup.meetuprecords)+1
+    id = len(meetup.meetuprecords)+1
     date=datetime.now()
     venue= data['venue']
     title= data['title']
 
-    meetup.createMeetup(meetupid, title, date, venue)
+    meetup.createMeetup(id, title, date, venue)
     return jsonify({
         "status": 201, "data":[
             {"title": "title", "venue":"venue", "date":"date", "tags": ["tag1", "tag2", "tag3"] }]}), 201
