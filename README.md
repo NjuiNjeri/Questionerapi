@@ -1,3 +1,5 @@
+https://codeclimate.com/github/%7B%7BNjuiNjeri%7D%7D/%7B%7Bproject_name%7D%7D.png
+
 # Questionerapi
 
 ## usage
