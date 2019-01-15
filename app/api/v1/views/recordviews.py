@@ -4,7 +4,7 @@ from datetime import datetime
 from uuid import uuid4
 
 
-v1_meetup_blueprint = Blueprint('allmeetups', __name__, url_prefix='/api/v1')
+v1_meetup_blueprint = Blueprint('/allmeetups', __name__, url_prefix='/api/v1')
 
 meetup = Meetup_records()
 
@@ -20,7 +20,7 @@ def createmeetup():
     meetup.createMeetup(id, title, date, venue)
     return jsonify({
         "status": 201, "data":[
-            {"title": "title", "venue":"venue", "date":"date", "tags": ["tag1", "tag2", "tag3"] }]}), 201
+            { "meetupid":"meetupid",  "title": "title", "venue":"venue", "date":"date"}]}), 201
 
 
 
