@@ -1,4 +1,10 @@
 
+[![Build Status](https://travis-ci.com/NjuiNjeri/Questionerapi.svg?branch=Develop)](https://travis-ci.com/NjuiNjeri/Questionerapi)
+[![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/test_coverage)](https://codeclimate.com/github/codeclimate/codeclimate/test_coverage)
+
+[![Coverage Status](https://coveralls.io/repos/github/<NjuiNjeri>/<Questionerapi>/badge.svg?branch=Develop)](https://coveralls.io/github/<NjuiNjeri>/<Questionerapi>?branch=D
+
 # Endpoints
 
 GET/api/v1/questions  
@@ -11,11 +17,6 @@ POST/api/v1/meetups
 
 GET/api/v1/allquestions
 
-[![Build Status](https://travis-ci.com/NjuiNjeri/Questionerapi.svg?branch=Develop)](https://travis-ci.com/NjuiNjeri/Questionerapi)
-[![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/test_coverage)](https://codeclimate.com/github/codeclimate/codeclimate/test_coverage)
-
-[![Coverage Status](https://coveralls.io/repos/github/<NjuiNjeri>/<Questionerapi>/badge.svg?branch=Develop)](https://coveralls.io/github/<NjuiNjeri>/<Questionerapi>?branch=D
 # Questionerapi
 
 ## usage
