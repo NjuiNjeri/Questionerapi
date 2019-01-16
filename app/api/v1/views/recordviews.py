@@ -3,23 +3,22 @@ from ..models.allmeetuprecords import Meetup_records
 from datetime import datetime
 from uuid import uuid4
 
+v1_meetups_blueprint= Blueprint('/allmeetups', __name__, url_prefix='/api/v1')
 
-v1_meetup_blueprint = Blueprint('/allmeetups', __name__, url_prefix='/api/v1')
+meetups = Meetup_records()
 
-meetup = Meetup_records()
-
-@v1_meetup_blueprint.route('/allmeetups', methods=['POST'])
-def createmeetup():
+@v1_meetups_blueprint.route('/allmeetups', methods=['POST'])
+def post_meetup():
     data= request.get_json()
+    id = data['meetupid']
+    title = data['title']
+    venue=data['venue']
+    response = meetups.createMeetup(id, title, venue)
 
-    id = len(meetup.meetuprecords)+1
-    'date' ='datetime.now'()
-    "venue" 'venue'
-    "title"'title'
+    return make_response(jsonify({"Meetup record updated" : response})), 201
 
-    return make_response(jsonify({"Status", 201, "All Meetups Here"})), 201
 
-    @v1_meetup_blueprint.route('/allmeetups', methods=['GET'])
-    def get_all():
-        meetup= Meetup_records.createMeetup()
-        return jsonify(meetup), 200
+@v1_meetups_blueprint.route('/allmeetups', methods=['GET'])
+def get_all():
+    meets =  meetups.get_meetups()
+    return jsonify(meets)
