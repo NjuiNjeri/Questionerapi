@@ -10,17 +10,17 @@ meetup = CreateMeetups()
 @v1_mymeetups_blueprint.route('/mymeetups', methods=['POST'])
 def my_meetups():
     data= request.get_json()
-    id = data['meetupid']
     title = data['meetup_title']
     venue = data['meetup_venue']
     time = data['time']
-    response = meetup.my_meetups(id, title, venue, time)
+    response = meetup.post_meetups(title, venue, time)
+    print(response)
 
     return make_response(jsonify({"Meetup record updated" : response})), 201
     
 @v1_mymeetups_blueprint.route('/mymeetups', methods=['GET'])
 def get_all():
-    views =  meetup.my_meetups()
+    views =  meetup.post_meetups()
     return jsonify(views)
 
 
