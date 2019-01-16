@@ -1,7 +1,7 @@
 import unittest
 from flask import json
 from app import create_app
-
+from app.api.v1.views.meetviews import my_meetups
 from app.api.v1.models.createmeetup import CreateMeetups
 
 
@@ -16,13 +16,13 @@ class TestMeetups(unittest.TestCase):
         self.client = self.app.test_client()
 
         # payload = {
-        #     'username': username
-        #     'email': email
-        #     'password': password
-        # 
+        #     # 'username'= username
+        #     # 'email = email
+        #     # 'password' = password
+        # }
 
 
-    def test_get_all_meetups(self):
+    def test_get_single_meetup(self):
         result = self.client.get('/api/v1/meetups', content_type='application/json')
         self.assertEqual(result.status_code, 200)
 

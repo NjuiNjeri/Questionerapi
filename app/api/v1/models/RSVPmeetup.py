@@ -10,7 +10,7 @@ app=Flask(__name__)
 
 class RSVP(object):
     """Class for RSVP"""
-    def __init__(self, name, email, _id=None):
+    def RSVP__init__(self, name, email, _id=None):
         self.name = name
         self.email = email
         self._id = _id
@@ -22,7 +22,7 @@ class RSVP(object):
             "name": self.name,
             "email": self.email,
             "links": {
-                "self": "{}api/rsvps/{}".format('request.url_root, _id')
+                "self": "{}api/rsvps/{}".format('request.url_root, _id' 'name', 'venue')
             }
         }
 

@@ -1,4 +1,4 @@
-from flask import jsonify
+from flask import jsonify, abort
 from datetime import datetime
 
 
@@ -6,19 +6,27 @@ from datetime import datetime
 
 class Meetup_records:
     '''creates the meet up record'''
-    def __init__(self, *args,):
+    def __init__(self):
         self.meetuprecords= []
 
-    def createMeetup(self, meetupid="", meetup_date="", meetup_time= "", meetup_venue=""):
-        '''creates new meetup'''
+    def createMeetup(self, id, title, venue):
+        '''creates new meetup and adds it to the self.meetuprecords list'''
+
+        self.meetupid= id
+        self.title= title
+        self.date= datetime.now()
+        self.venue= venue
+
         newMeetup   ={
-            'meetupid': meetupid,
-            'meetupdate': datetime,
-            'meetuptime': meetup_time,
-            'meetupvenue': meetup_venue,
+            'id': id,
+            'date': datetime,
+            'venue': venue
         
     }
 
         self.meetuprecords.append(newMeetup)
 
-        return Meetup_records
+        return self.meetuprecords
+
+    def get_meetups(self):
+        return self.meetuprecords
