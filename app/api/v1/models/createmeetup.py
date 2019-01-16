@@ -1,5 +1,6 @@
 from datetime import datetime
-
+from app.api.v1.views import meetviews
+from flask import Flask, json, jsonify, abort, Response, make_response
 
 
 class CreateMeetups:
@@ -17,3 +18,8 @@ class CreateMeetups:
          }
 
         self.meetups.append(newMeetup)
+
+    def my_meetups(self):
+        return self.meetups
+
+       
