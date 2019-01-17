@@ -29,17 +29,17 @@ class TestMeetups(unittest.TestCase):
 
 
     def test_get_single_meetup(self):
-        result = self.client.get('/api/v1/meetups', content_type='application/json')
-        self.assertEqual(result.status_code, 200)
+        result1 = self.client.get('/api/v1/meetups', content_type='application/json')
+        self.assertEqual(result1.status_code, 200)
 
     def test_create_endpoint(self):
-        result = self.client.get('/api/v1/meetups', content_type='application/json')
+        result = self.client.post('/api/v1/meetups', data=json.dumps(self.meetups), content_type='application/json')
         self.assertEqual(result.status_code, 201)
 
     def test_api_can_delete_record(self):
         res = self.client.post('/api/v1/meetups', data=json.dumps(self.meetups), content_type='application/json')
         self.assertEqual(res.status_code, 201)
-        response = self.client.delete('/api/v1/meetups/upcoming/1/delete', content_type='application/json')
+        response = self.client.delete('/api/v1/meetups/delete', content_type='application/json')
         self.assertEqual(response.status_code, 204)
 
 if __name__ == '__main__':

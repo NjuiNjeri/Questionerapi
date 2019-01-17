@@ -17,12 +17,12 @@ class TestMeetupRecords(unittest.TestCase):
 
     def test_get_all_meetups(self):
         '''tests all meetups created '''
-        result = self.client.get('/api/v1/allmeetups', content_type='application/json')
+        result = self.client.get('/api/v1/meetups', content_type='application/json')
         self.assertEqual(result.status_code, 200)
 
     def test_create_endpoint(self):
         ''' tests whether the meetups are there'''
-        result = self.client.post('/api/v1/allmeetups', data=json.dumps(self.CreateMeetups), content_type='application/json')
+        result = self.client.post('/api/v1/meetups', data=json.dumps(self.CreateMeetups), content_type='application/json')
         self.assertEqual(result.status_code, 201)
 
 if __name__ == '__main__':
