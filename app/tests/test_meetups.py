@@ -15,31 +15,26 @@ class TestMeetups(unittest.TestCase):
     
     def setUp(self):
         self.app = create_app()
-        self.client = self.app.test_client()
-        self.meetups = {
+        self.client = self.app.test_client
+        self.post_meetups = {
             "meetupId": "meetupId",
             "title": "title",
             "venue": " venue"
         }
-    # # payload = {
-    #     'username'= username
-    #     'email = email
-    #     'password' = password
-    # }
-
-
+    
     def test_get_single_meetup(self):
-        result1 = self.client.get('/api/v1/meetups', content_type='application/json')
-        self.assertEqual(result1.status_code, 200)
+        result = self.client().get('/api/v1/meetups', content_type='application/json')
+        self.assertEqual(result.status_code, 200)
 
-    def test_create_endpoint(self):
-        result = self.client.post('/api/v1/meetups', data=json.dumps(self.meetups), content_type='application/json')
+    def test_createmeetup_endpoint(self):
+        '''tests that the admin can effectively create a meetup'''
+        result = self.client().post('/api/v1/meetups', data=json.dumps(self.post_meetups), content_type='application/json')
         self.assertEqual(result.status_code, 201)
 
     def test_api_can_delete_record(self):
-        res = self.client.post('/api/v1/meetups', data=json.dumps(self.meetups), content_type='application/json')
+        res = self.client().post('/api/v1/meetups', data=json.dumps(self.post_meetups), content_type='application/json')
         self.assertEqual(res.status_code, 201)
-        response = self.client.delete('/api/v1/meetups/delete', content_type='application/json')
+        response = self.client().delete('/api/v1/meetups', content_type='application/json')
         self.assertEqual(response.status_code, 204)
 
 if __name__ == '__main__':
