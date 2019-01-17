@@ -9,7 +9,7 @@ app=Flask(__name__)
 
 
 class RSVP(object):
-    """Class for RSVP"""
+    """Creates an RSVP"""
     def RSVP__init__(self, name, email, _id=None):
         self.name = name
         self.email = email
