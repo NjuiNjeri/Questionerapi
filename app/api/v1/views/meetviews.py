@@ -25,4 +25,4 @@ def get_all():
 @v1_mymeetups_blueprint.route('/meetups/delete/<int:meetupId>', methods=['DELETE'])
 def delete_meetup(meetupId):
     Meetup = meetup.delete_meetup(meetupId)
-    return jsonify({"status": 204, "Meetup": Meetup})
+    return jsonify(Meetup)

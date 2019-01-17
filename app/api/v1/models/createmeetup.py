@@ -1,7 +1,7 @@
 from datetime import datetime
 from app.api.v1.views import meetviews
 from flask import Flask, json, jsonify, abort, Response, make_response
-
+all_meetups=[]
 
 class CreateMeetups():
     """ Creates the meetup class"""
