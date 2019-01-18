@@ -40,11 +40,11 @@ class TestMeetups(unittest.TestCase):
         result = self.client().post('/api/v1/meetups', data=json.dumps(self.post_meetups1), content_type='application/json')
         self.assertEqual(result.status_code, 201)
 
-    # def test_api_can_delete_record(self):
-    #     res = self.client().post('/api/v1/meetups', data=json.dumps(self.post_meetups2), content_type='application/json')
-    #     self.assertEqual(res.status_code, 201)
-    #     response = self.client().delete('/api/v1/meetups/1', content_type='application/json')
-    #     self.assertEqual(response.status_code, 200)
+    def test_api_can_delete_record(self):
+        res = self.client().post('/api/v1/meetups', data=json.dumps(self.post_meetups2), content_type='application/json')
+        self.assertEqual(res.status_code, 201)
+        response = self.client().delete('/api/v1/meetups/1', content_type='application/json')
+        self.assertEqual(response.status_code, 200)
 
 if __name__ == '__main__':
     unittest.main()
