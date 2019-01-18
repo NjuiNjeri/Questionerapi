@@ -24,9 +24,12 @@ class CreateMeetups():
 
     def delete_meetup(self, meetupid):
         """ Will remove any selected meetup record """
-        Meetup = [Meetup for Meetup in self.meetups if Meetup ['meetupid'] == meetupid]
-        if Meetup:
-            self.meetups.remove(Meetup[0])
-        return abort(400, "Message: Not found!")
-    
+        # Meetup = [Meetup for Meetup in self.meetups if Meetup ['meetupid'] == meetupid]
+        # if len(Meetup):
+        #     abort(400)
+        # self.meetups.remove(Meetup[0])
+        for Meetup in self.meetups:
+            if meetupid == int(meetupid):
+                self.meetups.remove(Meetup)
+                
        
