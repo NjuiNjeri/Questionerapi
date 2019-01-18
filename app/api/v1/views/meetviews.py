@@ -22,7 +22,7 @@ def get_all():
     views =  meetup.post_meetups()
     return jsonify(views)
 
-@v1_mymeetups_blueprint.route('/meetups/delete/<meetupid>', methods=['DELETE'])
+@v1_mymeetups_blueprint.route('/meetups/<int:meetupid>', methods=['DELETE'])
 def delete_meetup(meetupid):
-    Meetup = meetup.delete_meetup(meetupid)
-    return jsonify('Meetup')
+    meetup.delete_meetup(meetupid)
+    return jsonify('Deleted')
