@@ -12,9 +12,9 @@ def post_meetups():
     data= request.get_json()
     title = data['title']
     venue = data['venue']
-    time = data['time']
+    meetup_time = data['meetup_time']
    
-    meetups= meetup.createMeetup(title, venue, time)
+    meetups= meetup.createMeetup(title, venue, meetup_time)
     return jsonify({"status": 201, "data": meetups}),201
     
 @v1_mymeetups_blueprint.route('/meetups', methods=['GET'])
@@ -22,7 +22,7 @@ def get_all():
     views =  meetup.post_meetups()
     return jsonify(views)
 
-@v1_mymeetups_blueprint.route('/meetups/delete/<int:meetupId>', methods=['DELETE'])
-def delete_meetup(meetupId):
-    Meetup = meetup.delete_meetup(meetupId)
-    return jsonify({"status": 204, "Meetup": Meetup})
+@v1_mymeetups_blueprint.route('/meetups/delete/<meetupid>', methods=['DELETE'])
+def delete_meetup(meetupid):
+    Meetup = meetup.delete_meetup(meetupid)
+    return jsonify('Meetup')
